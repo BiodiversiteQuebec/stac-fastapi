@@ -2,7 +2,7 @@
 ARCHIVE_PATH="/backup"
 
 # Archive filename
-ARCHIVE_FILE="catalog-db_`date +%F_%H-%M-%S`.tbz2"
+ARCHIVE_FILE="catalog-db_`date +%F_%H-%M-%S`.tar.gz"
 
 # Archives older than this will be deleted
 ARCHIVE_DAYS="30"
@@ -23,11 +23,11 @@ cd $ARCHIVE_PATH
 nice pg_dump -d catalogdb > catalogdb.sql
 
 # Use Nice to create a tar compressed with bzip2
-nice tar -cjf $ARCHIVE_FILE *.sql
+nice tar -zcvf $ARCHIVE_FILE *.sql
 
 # Remove the SQL files
 nice rm -rf *.sql
 
 # Remove old archive files
-nice find *.tbz2 -mtime +$ARCHIVE_DAYS -exec rm {} \;
+nice find *.tar.gz -mtime +$ARCHIVE_DAYS -exec rm {} \;
 
