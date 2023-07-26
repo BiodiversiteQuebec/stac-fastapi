@@ -31,6 +31,6 @@ Il peut être nécessaire d'effacer tout ce qu'il y a dans catalogdb avant de fa
 ---
 Injection de données
 ---
-La documentation concernant l'injection de données dans le catalogue STAC ce trouve ici: https://github.com/ReseauBiodiversiteQuebec/io-data
-À noter que par défaut, la configuration NGINX ne permet pas de POST sur l'API. Il faut donc présentement enlever cette restriction temporairement avant de faire des injections. 
+La documentation concernant l'injection de données dans le catalogue STAC se trouve ici: https://github.com/ReseauBiodiversiteQuebec/io-data
+À noter que par défaut, la configuration NGINX ne permet pas de DELETE sur l'API. Il faut donc présentement enlever cette restriction temporairement avant de faire des injections. 
 
