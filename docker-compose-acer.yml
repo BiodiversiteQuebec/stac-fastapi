@@ -9,11 +9,11 @@ services:
       - APP_PORT=8082
       - RELOAD=true
       - ENVIRONMENT=production
-      - POSTGRES_USER=${PGUSER}
-      - POSTGRES_PASS=${PGPASSWORD}
-      - POSTGRES_DBNAME=${PGDATABASE}
-      - POSTGRES_HOST_READER=${PGHOST}
-      - POSTGRES_HOST_WRITER=${PGHOST}
+      - POSTGRES_USER=${ACERPGUSER}
+      - POSTGRES_PASS=${ACERPGPASSWORD}
+      - POSTGRES_DBNAME=${ACERPGDATABASE}
+      - POSTGRES_HOST_READER=${ACERPGHOST}
+      - POSTGRES_HOST_WRITER=${ACERPGHOST}
       - POSTGRES_PORT=5432
       - WEB_CONCURRENCY=10
       - VSI_CACHE=TRUE
@@ -40,13 +40,13 @@ services:
     container_name: stac-db-acer
     image: ghcr.io/stac-utils/pgstac:v0.7.6
     environment:
-      - POSTGRES_USER=${PGUSER}
-      - POSTGRES_PASSWORD=${PGPASSWORD}
-      - POSTGRES_DB=${PGDATABASE}
-      - PGUSER=${PGUSER}
-      - PGPASSWORD=${PGPASSWORD}
+      - POSTGRES_USER=${ACERPGUSER}
+      - POSTGRES_PASSWORD=${ACERPGPASSWORD}
+      - POSTGRES_DB=${ACERPGDATABASE}
+      - PGUSER=${ACERPGUSER}
+      - PGPASSWORD=${ACERPGPASSWORD}
       - PGHOST=localhost
-      - PGDATABASE=${PGDATABASE}
+      - PGDATABASE=${ACERPGDATABASE}
     ports:
       - "5440:5432"
     volumes:
